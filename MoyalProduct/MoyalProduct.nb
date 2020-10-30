@@ -1,0 +1,279 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9074,        271]
+NotebookOptionsPosition[      8248,        249]
+NotebookOutlinePosition[      8589,        264]
+CellTagsIndexPosition[      8546,        261]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Approximate Moyal Product", "Title",
+ CellChangeTimes->{{3.813031871343769*^9, 
+  3.81303188010378*^9}},ExpressionUUID->"32c2079e-21b3-43ee-b06e-\
+2c16be68c11b"],
+
+Cell["\<\
+For the purpose of verifying the leading term in gradient correction, we only \
+need to evaluate the Moyal star product up to second order.\
+\>", "Text",
+ CellChangeTimes->{{3.8130318834300833`*^9, 
+  3.813031909905775*^9}},ExpressionUUID->"aa9a06d8-5eaa-44ff-9757-\
+07a714da35f0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Star", "[", 
+   RowBox[{"a_", ",", "b_"}], "]"}], ":=", " ", 
+  RowBox[{
+   RowBox[{"a", " ", "b"}], "  ", "+", " ", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"I", " ", "\[HBar]"}], "2"], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{"a", ",", "r"}], "]"}], " ", 
+       RowBox[{"D", "[", 
+        RowBox[{"b", ",", "p"}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{"a", ",", "p"}], "]"}], 
+       RowBox[{"D", "[", 
+        RowBox[{"b", ",", "r"}], "]"}]}]}], ")"}]}], "-", 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["\[HBar]", "2"], "8"], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{"a", ",", 
+         RowBox[{"{", 
+          RowBox[{"r", ",", "2"}], "}"}]}], "]"}], " ", 
+       RowBox[{"D", "[", 
+        RowBox[{"b", ",", 
+         RowBox[{"{", 
+          RowBox[{"p", ",", "2"}], "}"}]}], "]"}]}], " ", "+", " ", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{"a", ",", 
+         RowBox[{"{", 
+          RowBox[{"p", ",", "2"}], "}"}]}], "]"}], " ", 
+       RowBox[{"D", "[", 
+        RowBox[{"b", ",", 
+         RowBox[{"{", 
+          RowBox[{"r", ",", "2"}], "}"}]}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{"a", ",", "r", ",", "p"}], "]"}], 
+       RowBox[{"D", "[", 
+        RowBox[{"b", ",", "r", ",", "p"}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"D", "[", 
+        RowBox[{"a", ",", "p", ",", "r"}], "]"}], 
+       RowBox[{"D", "[", 
+        RowBox[{"b", ",", "p", ",", "r"}], "]"}]}]}], ")"}]}]}]}]], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"e6d37b47-0f5d-4755-aa48-7cd328de5885"],
+
+Cell[TextData[{
+ "Calculate the Moyal star product for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["U", "7"], " ", 
+    RowBox[{"(", "t", ")"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e49bd1af-d807-4d3d-8212-675f300db95e"]
+}], "Text",
+ CellChangeTimes->{{3.8130319317803946`*^9, 
+  3.81303196038272*^9}},ExpressionUUID->"d34d0a66-9f56-4c63-9954-\
+1f61011afd8a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"Series", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"Star", "[", 
+        RowBox[{
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", " ", 
+            FractionBox[
+             RowBox[{"I", " ", "T"}], "\[HBar]"]}], 
+           FractionBox["1", "6"], " ", 
+           RowBox[{"V", "[", "r", "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"Star", "[", 
+          RowBox[{
+           RowBox[{"Exp", "[", 
+            RowBox[{
+             RowBox[{"-", " ", 
+              FractionBox[
+               RowBox[{"I", " ", "T"}], "\[HBar]"]}], 
+             FractionBox["1", "2"], " ", 
+             FractionBox[
+              SuperscriptBox["p", "2"], 
+              RowBox[{"2", "m"}]]}], "]"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"Star", "[", 
+            RowBox[{
+             RowBox[{"Exp", "[", 
+              RowBox[{
+               RowBox[{"-", " ", 
+                FractionBox[
+                 RowBox[{"I", " ", "T"}], "\[HBar]"]}], 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{
+                  FractionBox["2", "3"], " ", 
+                  RowBox[{"V", "[", "r", "]"}]}], "-", 
+                 RowBox[{
+                  FractionBox["1", 
+                   RowBox[{"72", "m"}]], 
+                  SuperscriptBox[
+                   RowBox[{"(", 
+                    RowBox[{"T", " ", 
+                    RowBox[{
+                    RowBox[{"V", "'"}], "[", "r", "]"}]}], ")"}], "2"]}]}], 
+                ")"}]}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"Star", "[", 
+              RowBox[{
+               RowBox[{"Exp", "[", 
+                RowBox[{
+                 RowBox[{"-", 
+                  FractionBox[
+                   RowBox[{"I", " ", "T"}], "\[HBar]"]}], 
+                 FractionBox["1", "2"], " ", 
+                 FractionBox[
+                  SuperscriptBox["p", "2"], 
+                  RowBox[{"2", "m"}]]}], "]"}], ",", 
+               RowBox[{"Exp", "[", 
+                RowBox[{
+                 RowBox[{"-", 
+                  FractionBox[
+                   RowBox[{"I", " ", "T"}], "\[HBar]"]}], 
+                 FractionBox["1", "6"], " ", 
+                 RowBox[{"V", "[", "r", "]"}]}], "]"}]}], "]"}]}], 
+            "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}], 
+        "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"Exp", "[", 
+        RowBox[{
+         RowBox[{"-", " ", 
+          FractionBox[
+           RowBox[{"I", " ", "T"}], "\[HBar]"]}], 
+         RowBox[{"(", 
+          RowBox[{
+           FractionBox[
+            SuperscriptBox["p", "2"], 
+            RowBox[{"2", "m"}]], "+", 
+           RowBox[{"V", "[", "r", "]"}]}], ")"}]}], "]"}], ")"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"T", ",", "0", ",", "3"}], "}"}]}], "]"}], "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"V", "'''"}], "[", "r", "]"}], "\[Rule]", "0"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"V", "''''"}], "[", "r", "]"}], "\[Rule]", "0"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.813032069477944*^9, 3.813032177793147*^9}, {
+  3.8130322224354124`*^9, 3.813032249660096*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"c605a271-2eef-44b6-b28a-07da1de9f93f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"1", "+", 
+   FractionBox[
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["V", "\[Prime]\[Prime]",
+       MultilineFunction->None], "[", "r", "]"}], " ", 
+     SuperscriptBox["T", "2"]}], 
+    RowBox[{"8", " ", "m"}]], "-", 
+   FractionBox[
+    RowBox[{"\[ImaginaryI]", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"m", " ", 
+        SuperscriptBox[
+         RowBox[{
+          SuperscriptBox["V", "\[Prime]",
+           MultilineFunction->None], "[", "r", "]"}], "2"]}], "+", 
+       RowBox[{
+        SuperscriptBox["p", "2"], " ", 
+        RowBox[{
+         SuperscriptBox["V", "\[Prime]\[Prime]",
+          MultilineFunction->None], "[", "r", "]"}]}]}], ")"}], " ", 
+     SuperscriptBox["T", "3"]}], 
+    RowBox[{"24", " ", 
+     SuperscriptBox["m", "2"], " ", "\[HBar]"}]], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "T", "]"}], "4"],
+    SeriesData[$CellContext`T, 0, {}, 0, 4, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`T, 0, {
+   1, 0, Rational[1, 8] $CellContext`m^(-1) 
+    Derivative[2][$CellContext`V][$CellContext`r], Complex[0, 
+      Rational[-1, 
+       24]] $CellContext`m^(-2) $CellContext`\[HBar]^(-1) ($CellContext`m 
+      Derivative[1][$CellContext`V][$CellContext`r]^2 + $CellContext`p^2 
+      Derivative[2][$CellContext`V][$CellContext`r])}, 0, 4, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.813032200058284*^9, {3.8130322335336204`*^9, 3.813032251189907*^9}},
+ CellLabel->"Out[4]=",ExpressionUUID->"b25c814a-10fe-4a88-b405-2b205055de66"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{766, 772},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 167, 3, 96, "Title",ExpressionUUID->"32c2079e-21b3-43ee-b06e-2c16be68c11b"],
+Cell[750, 27, 291, 6, 56, "Text",ExpressionUUID->"aa9a06d8-5eaa-44ff-9757-07a714da35f0"],
+Cell[1044, 35, 1714, 54, 124, "Input",ExpressionUUID->"e6d37b47-0f5d-4755-aa48-7cd328de5885"],
+Cell[2761, 91, 409, 12, 34, "Text",ExpressionUUID->"d34d0a66-9f56-4c63-9954-1f61011afd8a"],
+Cell[CellGroupData[{
+Cell[3195, 107, 3451, 94, 360, "Input",ExpressionUUID->"c605a271-2eef-44b6-b28a-07da1de9f93f"],
+Cell[6649, 203, 1571, 42, 61, "Output",ExpressionUUID->"b25c814a-10fe-4a88-b405-2b205055de66"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
